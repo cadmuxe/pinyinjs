@@ -1,3 +1,12 @@
+# Wechat Web 输入法
+
+* 复制以下代码并添加为书签
+```
+javascript: function loadpyjs(e,t){var d=document,n=d.createElement("script");n.type="text/javascript",n.async=!1,arguments.length>1&&(n.onload=t),n.setAttribute("src","https://cdn.jsdelivr.net/gh/cadmuxe/pinyinjs@2d2791dc3158b624a4dafdf887e4ca4633708df5/"+e),d.head.appendChild(n)}function loadpyjss(e){var t=document,d=t.createElement("link");d.rel="stylesheet",d.type="text/css",d.href=e,d.media="all",t.head.appendChild(d)}loadpyjss("https://cdn.jsdelivr.net/gh/cadmuxe/pinyinjs/simple-input-method/simple-input-method.css"),loadpyjs("dict/pinyin_dict_notone.js"),loadpyjs("pinyinUtil.js"),loadpyjs("simple-input-method/simple-input-method.js",function(){console.log("Script loaded"),SimpleInputMethod.init(".edit_area")});
+```
+* 登陆微信后点击前面创建的收藏链接
+
+-----
 # 一个实现汉字与拼音互转的小巧web工具库
 
 一个实现汉字与拼音互转的小巧web工具库，另外还包含一个非常非常简单的JS版拼音输入法。
