@@ -107,13 +107,13 @@ var SimpleInputMethod =
 					that.selectHanzi(1);
 					preventDefault = true;
 				}
-				else if(keyCode == 33 && that.pageCount > 0 && that.pageCurrent > 1) // 上翻页
+				else if(keyCode == 189 && that.pageCount > 0 && that.pageCurrent > 1) // 上翻页
 				{
 					that.pageCurrent--;
 					that.refreshPage();
 					preventDefault = true;
 				}
-				else if(keyCode == 34 && that.pageCount > 0 && that.pageCurrent < that.pageCount) // 下翻页
+				else if(keyCode == 187 && that.pageCount > 0 && that.pageCurrent < that.pageCount) // 下翻页
 				{
 					that.pageCurrent++;
 					that.refreshPage();
@@ -183,7 +183,19 @@ var SimpleInputMethod =
 		}
 		else // 如果没有单引号，表示已经没有候选词了
 		{
-			this._input.value += this.hanzi;
+			if(this._input.tagName == 'PRE' ){
+				this._input.innerHTML += this.hanzi;
+				var range = document.createRange();
+				var sel = window.getSelection();
+				range.setStart(this._input, 1);
+				range.collapse(true);
+				sel.empty();
+				sel.addRange(range);
+			}
+			else
+			{
+				this._input.value += this.hanzi;
+			}
 			this.hide();
 		}
 	},
